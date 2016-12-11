@@ -1,0 +1,80 @@
+
+body{
+	background-color: #CCF;
+	text-align: center;
+}
+
+body>p:last-child{
+	font-size: 0.9em;
+	font-family: monospace;
+}
+
+#output {
+	
+	/*
+	border: 1px solid black;
+	*/
+	
+	border-radius: 5px;
+	background-color: #FFFA;
+	box-shadow: 0 0 25px white;
+	
+	margin-left: 25%;
+	margin-right: 25%;
+	
+	margin-bottom: 25px;
+	
+	padding: 15px;
+	padding-bottom: 15px;
+	
+	display: inline-block;
+}
+
+#braging{
+	position: absolute;
+	
+	margin-left: 25%;
+	width: 50%;
+	
+	bottom:0;
+}
+
+genre {
+	text-shadow: 0 0 0.1em #F88, 0 0 0.2em #F88;
+	
+}
+
+
+mechanic {
+	text-shadow: 0 0 0.1em #F8C,  0 0 0.2em #F8C;
+}
+
+setting {
+	text-shadow: 0 0 0.1em #8F8,  0 0 0.2em #8F8;
+}
+
+focus {
+	text-shadow: 0 0 0.1em #88F, 0 0 0.2em #88F;
+}
+
+theme {
+	text-shadow: 0 0 0.1em #C8F, 0 0 0.2em #C8F;
+}
+
+annoying {
+	display: inline-block;
+	font-size: 1.5em;
+	border: dotted black 0.1em;
+	animation-name: blink;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	color: #0F0;
+	border-color: #F00;
+	padding: 0.2em;
+}
+
+@keyframes blink {
+	0% { color: #0F0; border-color: #F00; }
+	33% { color: #F00; border-color: #00F; }
+	66% { color: #00F; border-color: #0F0; }
+}
