@@ -2,20 +2,6 @@
 let output_element;
 let button_element;
 
-/* Fr
-let excuses = [
-	"Ça ne rentre pas dans le budget.",
-	"J'ai la fleme.",
-	"Le public n'est pas prèt.",
-	"Mon ego n'est pas satisfait.",
-	"Plus; il m'en faut plus !",
-	"Pas assez 'Hype'"
-];
-
-let 
-
-/*/
-
 function token( tk, a ){
 	return {
 		tk: tk,
@@ -24,10 +10,13 @@ function token( tk, a ){
 }
 
 let excuses = [
-	"More."
+	"Another one"
 ];
+const excuses_pow2 = Math.pow( 2, excuses.length - 1 );
+
 
 let setting = [
+	token( "established", "an" ),
 	token( "historical", "an" ),
 	token( "modern" ),
 	token( "fantasy" ),
@@ -58,26 +47,29 @@ let setting_qualifier = [
 	token( "depressing" ),
 	token( "hopeful", "an" ),
 	token( "anachronistic", "an" ),
-	token( "fractured" ),
+	token( "fractured" ), // weird, but works for me
 	token( "idealized", "an" ),
 	token( "imaginary", "an" )
 ];
 
 let genre = [
 	token( "puzzle" ),
-	token( "<abbr title=\"First Person Shooter (-ish)\">FPS</abbr>", "an" ),
 	token( "<abbr title=\"Role-Playing Game\">RPG</abbr>", "an" ),
 	token( "strategy", "a" ),
 	token( "racing" ),
 	token( "platforming" ),
 	token( "management" ),
 	token( "simulation" ),
-	token( "casual" ),
-	token( "<abbr title=\"Shoot Them'up\">SHMUP</abbr>" ),
-	token( "action" ),
+	token( "action", "an" ),
+	token( "adventure", "an" ),
 ];
 
+// not really genres, not mechanics either ...
+// token( "<abbr title=\"Shoot Them'up\">SHMUP</abbr>" ),
+// token( "<abbr title=\"First Person Shooter (-ish)\">FPS</abbr>", "an" ),
+
 let mechanic = [
+	token( "casual", "" ),
 	token( "turn based" ),
 	token( "real time" ),
 	token( "leveling" ),
@@ -93,10 +85,12 @@ let mechanic = [
 	token( "permadeath" ),
 	token( "prestige" ),
 	token( "branching story" ),
-	token( "collectibles" ),
+	token( "collecting" ),
 	token( "team building" ),
 	token( "ressource management" ),
 	token( "stats" ),
+	token( "AI interactions", "an" ),
+	token( "minigame" )
 ];
 
 let theme = [
@@ -131,7 +125,8 @@ let theme = [
 	"economy",
 	"state",
 	"unknown",
-	"magic"
+	"magic",
+	"consequences"
 ];
 
 let theme_combinator = [
@@ -156,7 +151,7 @@ let focus = [
 	token( "time trials" ),
 	token( "emergent gameplay", "an" ),
 	token( "gameplay depth" ),
-	token( "kid accessibility" ),
+	token( "kid accessibility" ), //should not, but changes everything ! love it
 	token( "dexterity" ),
 	token( "complexity" ),
 	token( "teaching" ),
@@ -188,7 +183,7 @@ let combinatorial_explosion
 /*/
 
 let combinatorial_explosion
-	= ( genre.length )
+	= ( genre.length + 1 )
 	* ( genre.length + 1 )
 	* ( mechanic.length + 1 )
 	* ( mechanic.length + 1 )
@@ -212,8 +207,10 @@ function capitalize( str ){
 	return str.slice( 0, 1 ).toUpperCase() + str.slice( 1 );
 }
 
+var tries = 0
+
 function generate(){
-	let g  = random( genre );
+	let g  = ( Math.random() > ( 1 / genre.length ) ) && random( genre );
 	let g2 = ( Math.random() < 0.05 ) && random( genre );
 	let m  = ( Math.random() < 0.7 ) && random( mechanic );
 	let m2 = ( m ) && ( Math.random() < 0.3 ) && random( mechanic );
@@ -228,7 +225,12 @@ function generate(){
 	if( m == m2 ) m2 = false;
 	if( f == f2 ) f2 = false;
 	
-	let str = capitalize( g.a ) + " " + "<genre>" + g.tk + "</genre> game";
+	let str;
+	
+	if( g )
+		str = capitalize( g.a ) + " " + "<genre>" + g.tk + "</genre> game";
+	else
+		str = "A game"
 	
 	// console.log( g, g2, m, m2, sq, s, f, f2, t, t2 );
 	
@@ -291,7 +293,10 @@ function generate(){
 		str += ".";
 		
 	output_element.innerHTML = str;
-	button_element.innerText = random( excuses );
+	
+	let excuse_id = excuses.length - ( 1 + Math.floor( Math.max( 0, Math.log( Math.random() * excuses_pow2 ) ) / Math.LN2 ) );
+	button_element.innerHTML = excuses[ excuse_id ];
+
 }
 
 function initialize(){
