@@ -2,12 +2,6 @@
 let output_element;
 let button_element;
 
-function token( tk, a ){
-	return {
-		tk: tk,
-		a: a || "a "
-	};
-}
 
 let excuses = [
 	"Another one"
@@ -15,119 +9,6 @@ let excuses = [
 const excuses_pow2 = Math.pow( 2, excuses.length - 1 );
 
 
-let setting = [
-	token( "established", "an" ),
-	token( "historical", "an" ),
-	token( "modern" ),
-	token( "fantasy" ),
-	token( "science-fiction" ),
-	token( "space" ),
-	token( "alternate history", "an" ),
-	token( "retro" ),
-	token( "retro-futurist" ),
-	token( "apocalyptic", "an" ),
-	token( "post-apocalyptic" ),
-	token( "post-post-apocalyptic" ),
-	token( "war time" ),
-	token( "near-future" ),
-	token( "near-past" ),
-	token( "cyberpunk" ),
-	token( "mythologic" ),
-	token( "classical antiquity" ),
-	token( "virtual space" ),
-];
-
-let setting_qualifier = [
-	token( "light" ),
-	token( "hard", "an" ),
-	token( "serious" ),
-	token( "comedic" ),
-	token( "parodic" ),
-	token( "tragic" ),
-	token( "depressing" ),
-	token( "hopeful", "an" ),
-	token( "anachronistic", "an" ),
-	token( "fractured" ), // weird, but works for me
-	token( "idealized", "an" ),
-	token( "imaginary", "an" )
-];
-
-let genre = [
-	token( "puzzle" ),
-	token( "<abbr title=\"Role-Playing Game\">RPG</abbr>", "an" ),
-	token( "strategy", "a" ),
-	token( "racing" ),
-	token( "platforming" ),
-	token( "management" ),
-	token( "simulation" ),
-	token( "action", "an" ),
-	token( "adventure", "an" ),
-];
-
-// not really genres, not mechanics either ...
-// token( "<abbr title=\"Shoot Them'up\">SHMUP</abbr>" ),
-// token( "<abbr title=\"First Person Shooter (-ish)\">FPS</abbr>", "an" ),
-
-let mechanic = [
-	token( "casual", "" ),
-	token( "turn based" ),
-	token( "real time" ),
-	token( "leveling" ),
-	token( "research tree" ),
-	token( "research web" ),
-	token( "unfolding gameplay", "an" ),
-	token( "negociation" ),
-	token( "gambling" ),
-	token( "trading" ),
-	token( "player customisation" ),
-	token( "vehicle building" ),
-	token( "procedural generation" ),
-	token( "permadeath" ),
-	token( "prestige" ),
-	token( "branching story" ),
-	token( "collecting" ),
-	token( "team building" ),
-	token( "ressource management" ),
-	token( "stats" ),
-	token( "AI interactions", "an" ),
-	token( "minigame" )
-];
-
-let theme = [
-	"family",
-	"parenthood",
-	"growing-up",
-	"love",
-	"friendship",
-	"self-determination",
-	"respect",
-	"growing old",
-	"mental illness",
-	"death",
-	"loss",
-	"art",
-	"creation",
-	"personal gain",
-	"balance",
-	"choice",
-	"religion",
-	"faith",
-	"honesty",
-	"greed",
-	"addiction",
-	"sharing",
-	"birth",
-	"differences",
-	"society",
-	"technology",
-	"nature",
-	"education",
-	"economy",
-	"state",
-	"unknown",
-	"magic",
-	"consequences"
-];
 
 let theme_combinator = [
 	"and",
@@ -137,28 +18,6 @@ let theme_combinator = [
 	"without",
 	"in exchange of",
 	"<abbr title=\"with regards to\">wrt</abbr>", // full 'with respect to' / 'with regards to' feel weird.
-];
-
-let focus = [
-	token( "exploration", "an" ),
-	token( "construction" ),
-	token( "crafting" ),
-	token( "system mastery" ),
-	token( "story" ),
-	token( "choice" ),
-	token( "characters" ),
-	token( "the player" ),
-	token( "time trials" ),
-	token( "emergent gameplay", "an" ),
-	token( "gameplay depth" ),
-	token( "kid accessibility" ), //should not, but changes everything ! love it
-	token( "dexterity" ),
-	token( "complexity" ),
-	token( "teaching" ),
-	token( "learning" ),
-	token( "fun" ),
-	token( "flow" ),
-	token( "emotions" ),
 ];
 
 //*/

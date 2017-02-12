@@ -1,0 +1,25 @@
+
+let mechanic = [
+	token( "casual", "" ),
+	token( "turn based" ),
+	token( "real time" ),
+	token( "leveling" ),
+	token( "research tree" ),
+	token( "research web" ),
+	token( "unfolding gameplay", "an" ),
+	token( "negociation" ),
+	token( "gambling" ),
+	token( "trading" ),
+	token( "player customisation" ),
+	token( "vehicle building" ),
+	token( "procedural generation" ),
+	token( "permadeath" ),
+	token( "prestige" ),
+	token( "branching story" ),
+	token( "collecting" ),
+	token( "team building" ),
+	token( "ressource management" ),
+	token( "stats" ),
+	token( "AI interactions", "an" ),
+	token( "minigame" )
+];
