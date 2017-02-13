@@ -69,8 +69,8 @@ function capitalize( str ){
 var tries = 0
 
 function generate(){
-	let g  = ( Math.random() > ( 1 / genre.length ) ) && random( genre );
-	let g2 = ( Math.random() < 0.05 ) && random( genre );
+	let g  = ( Math.random() < 0.9 ) && random( genre );
+	let g2 = ( Math.random() < 0.1 ) && random( genre );
 	let m  = ( Math.random() < 0.7 ) && random( mechanic );
 	let m2 = ( m ) && ( Math.random() < 0.3 ) && random( mechanic );
 	let s  = ( Math.random() < 0.7 ) && random( setting );

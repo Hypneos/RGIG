@@ -4,14 +4,19 @@
 	<meta charset="utf-8">
 	<title>RGIG</title>
 	
-	<script src="token_generator.js"></script>
-	<script src="genres.js"></script>
-	<script src="mechanics.js"></script>
-	<script src="settings.js"></script>
-	<script src="settings_qualifiers.js"></script>
-	<script src="themes.js"></script>
-	<script src="focuses.js"></script>
-	<script src="generator.js"></script>
+	<!-- load ASAP -->
+	<script src="token_generator.js" ></script>
+	
+	<!-- load whenever -->
+	<script src="genres.js" async="async" ></script>
+	<script src="mechanics.js" async="async" ></script>
+	<script src="settings.js" async="async" ></script>
+	<script src="settings_qualifiers.js" async="async" ></script>
+	<script src="themes.js" async="async" ></script>
+	<script src="focuses.js" async="async" ></script>
+	
+	<!-- load after -->
+	<script src="generator.js" defer="defer" ></script>
 	
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
