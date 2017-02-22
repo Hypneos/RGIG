@@ -87,7 +87,7 @@ function generate(){
 	let str;
 	
 	if( g )
-		str = capitalize( g.a ) + " " + "<genre>" + g.tk + "</genre> game";
+		str = capitalize( g.det ) + " " + "<genre>" + g.noun + "</genre> game";
 	else
 		str = "A game"
 	
@@ -96,7 +96,7 @@ function generate(){
 	if( g2 || m ) str += " with"
 	
 	if( g2 ){
-		str += " light <genre>" + g2.tk + "</genre> elements";
+		str += " light <genre>" + g2.noun + "</genre> elements";
 	}
 	
 	if( g2 && m ){
@@ -110,9 +110,9 @@ function generate(){
 	if( m ){
 		
 		if( m2 ){
-			str += " <mechanic>" + m.tk + "</mechanic> and <mechanic>" + m2.tk + "</mechanic> mechanics";
+			str += " <mechanic>" + m.noun + "</mechanic> and <mechanic>" + m2.noun + "</mechanic> mechanics";
 		}else{
-			str += " " + m.a + " <mechanic>" + m.tk + "</mechanic> mechanic";
+			str += " " + m.det + " <mechanic>" + m.noun + "</mechanic> mechanic";
 		}
 		
 	}
@@ -123,9 +123,9 @@ function generate(){
 	
 	if( s ){
 		if( sq ){
-			str += " in " + sq.a + " <setting>" + sq.tk + " " + s.tk + "</setting> setting";
+			str += " in " + sq.det + " <setting>" + sq.noun + " " + s.noun + "</setting> setting";
 		}else{
-			str +=  " in " + s.a + " <setting>" + s.tk + "</setting> setting";
+			str +=  " in " + s.det + " <setting>" + s.noun + "</setting> setting";
 		}
 	}
 	
@@ -138,11 +138,11 @@ function generate(){
 	}
 	
 	if( f ){
-		str += " with a focus on <focus>" + f.tk + "</focus>";
+		str += " with a focus on <focus>" + f.noun + "</focus>";
 	}
 	
 	if( f2 ){
-		str += " and <focus>" + f2.tk + "</focus>";
+		str += " and <focus>" + f2.noun + "</focus>";
 	}
 	
 	

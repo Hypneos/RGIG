@@ -1,8 +1,7 @@
  
 function token( tk, a ){
 	return {
-		tk: tk,
-		a: a || "a "
+		noun: tk,
+		det: a || "a "
 	};
 }
-
