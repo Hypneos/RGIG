@@ -63,14 +63,15 @@ function random( arr ){
 }
 
 function capitalize( str ){
-	return str.slice( 0, 1 ).toUpperCase() + str.slice( 1 );
+	if( str ) return str.slice( 0, 1 ).toUpperCase() + str.slice( 1 );
+	return "?"
 }
 
 var tries = 0
 
 function generate(){
 	let g  = ( Math.random() < 0.9 ) && random( genre );
-	let g2 = ( Math.random() < 0.1 ) && random( genre );
+	let g2 = ( Math.random() < 0.2 ) && random( genre );
 	let m  = ( Math.random() < 0.7 ) && random( mechanic );
 	let m2 = ( m ) && ( Math.random() < 0.3 ) && random( mechanic );
 	let s  = ( Math.random() < 0.7 ) && random( setting );
@@ -112,7 +113,7 @@ function generate(){
 		if( m2 ){
 			str += " <mechanic>" + m.noun + "</mechanic> and <mechanic>" + m2.noun + "</mechanic> mechanics";
 		}else{
-			str += " " + m.det + " <mechanic>" + m.noun + "</mechanic> mechanic";
+			str += " " + m.det + " <mechanic>" + m.noun + "</mechanic> mechanics";
 		}
 		
 	}
