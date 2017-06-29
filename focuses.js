@@ -20,4 +20,5 @@ let focus = [
 	token( "fun" ),
 	token( "flow" ),
 	token( "emotions" ),
+	token( "teamwork" )
 ];

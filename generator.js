@@ -53,6 +53,7 @@ let combinatorial_explosion
 	* ( theme.length + 1 )
 	* ( focus.length + 1 )
 	* ( focus.length + 1 )
+	* 2.0 // absence of theme
 	* 2.0;
 
 //*/
@@ -131,10 +132,14 @@ function generate(){
 	}
 	
 	if( t ){
-		str += " about <theme>" + t;
+		str += " about <theme>";
 		if( t2 ){
-			str += " " + random( theme_combinator ) + " " + t2;
-		}
+			str += t + " " + random( theme_combinator ) + " " + t2;
+		}else{
+			if( Math.random() < 0.1 ) str += "absence of ";
+			str += t;
+			}
+		
 		str += "</theme>"
 	}
 	

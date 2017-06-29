@@ -9,4 +9,5 @@ let genre = [
 	token( "simulation" ),
 	token( "action", "an" ),
 	token( "adventure", "an" ),
+	token( "visual novel" )
 ];
